@@ -1,4 +1,4 @@
-![alt text]([https://s14.stc.yc.kpcdn.net/share/i/12/11574020/de-1200.jpg](https://i.pinimg.com/736x/ac/65/60/ac6560123c04c1f9cd4e5b9739d07ce1.jpg))
+![alt text]([[https://s14.stc.yc.kpcdn.net/share/i/12/11574020/de-1200.jpg](https://i.pinimg.com/736x/ac/65/60/ac6560123c04c1f9cd4e5b9739d07ce1.jpg)](https://i.pinimg.com/736x/ac/65/60/ac6560123c04c1f9cd4e5b9739d07ce1.jpg))
 
 ## Strategy
 
