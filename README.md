@@ -1,4 +1,4 @@
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+![Alt Text](https://www.davelabowitz.com/wp-content/uploads/Sisyphus-e1557869810488.jpg)
 
 ## Strategy
 
