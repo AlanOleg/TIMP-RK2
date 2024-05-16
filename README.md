@@ -1,5 +1,3 @@
-![Alt Text](https://www.davelabowitz.com/wp-content/uploads/Sisyphus-e1557869810488.jpg)
-
 ## Strategy
 
 Strategy defines a family of algorithms, encapsulates each one, and makes them 
@@ -11,3 +9,5 @@ The pattern has behavioral purpose and applies to the objects.
 * many related classes differ only in their behavior
 * you need different variants of an algorithm
 * an algorithm uses data that clients shouldn't know about
+
+![Alt Text](https://www.davelabowitz.com/wp-content/uploads/Sisyphus-e1557869810488.jpg)
