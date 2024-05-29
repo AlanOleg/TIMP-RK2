@@ -13,6 +13,6 @@ if(BUILD_TESTS)
   file(GLOB ${PROJECT_NAME}_TEST_SOURCES tests/*.cpp)  # Получаем исходные файлы тестов.
   add_subdirectory(third-party/gtest) # Добавление библиотеки Google Test
   add_executable(RunTests ${${PROJECT_NAME}_TEST_SOURCES})  # Создаем исполняемый файл для тестов.
-  target_link_libraries(RunTests GTest::gtest_main)  # Линкуем библиотеки для тестов.
+  target_link_libraries(RunTests ${PROJECT_NAME} GTest::gtest_main)  # Линкуем библиотеки для тестов.
   add_test(NAME RunTests COMMAND RunTests)  # Добавляем команду для запуска тестов.
 endif()
