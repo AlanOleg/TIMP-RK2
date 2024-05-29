@@ -11,3 +11,4 @@ The pattern has behavioral purpose and applies to the objects.
 * an algorithm uses data that clients shouldn't know about
 
 ![engineer-tf2](https://github.com/AlanOleg/TIMP-RK2/assets/57073942/1ff67e33-b9c3-437c-9f7c-faa663edf156)
+![Alt Text](https://media.tenor.com/Rb9IRhCSV4EAAAAC/tf2-engineer.gif)
