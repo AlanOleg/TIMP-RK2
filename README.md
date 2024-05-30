@@ -9,5 +9,3 @@ The pattern has behavioral purpose and applies to the objects.
 * many related classes differ only in their behavior
 * you need different variants of an algorithm
 * an algorithm uses data that clients shouldn't know about
-
-![Alt Text](https://media.tenor.com/Rb9IRhCSV4EAAAAC/tf2-engineer.gif)
