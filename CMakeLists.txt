@@ -6,7 +6,7 @@ project(Strategy)
 
 add_executable(Strategy Strategy.cpp)
 
-option(BUILD_TESTS "Build tests" ON)
+option(BUILD_TESTS "Build tests" OFF)
 
 if(BUILD_TESTS)
   enable_testing()  # Включаем поддержку тестирования.
