@@ -2,7 +2,7 @@
 #include <cassert>
 #include <sstream>
 #include <gtest/gtest.h>
-//#include "../Strategy.cpp"
+#include "../Strategy.cpp"
 
 // Ваши классы Strategy, ConcreteStrategyA, ConcreteStrategyB, ConcreteStrategyC и Context здесь...
 
@@ -42,7 +42,7 @@ void testStrategyC() {
   assert(stream.str() == "Concrete Strategy C\n");
 }
 
-int main() {
+int testing_ground() {
   testStrategyA();
   testStrategyB();
   testStrategyC();
