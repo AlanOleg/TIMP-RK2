@@ -1,5 +1,8 @@
+#include <iostream>
 #include <cassert>
 #include <sstream>
+#include <gtest/gtest.h>
+#include "../Strategy.cpp"
 
 // Ваши классы Strategy, ConcreteStrategyA, ConcreteStrategyB, ConcreteStrategyC и Context здесь...
 
