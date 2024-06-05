@@ -9,7 +9,6 @@
  */
 
 #include <iostream>
-#include <iostream>
 
 /*
  * Strategy
