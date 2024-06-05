@@ -2,7 +2,7 @@
 #include <cassert>
 #include <sstream>
 #include <gtest/gtest.h>
-#include "../Strategy.hpp"
+#include "../strategy/Strategy.hpp"
 
 // Ваши классы Strategy, ConcreteStrategyA, ConcreteStrategyB, ConcreteStrategyC и Context здесь...
 
