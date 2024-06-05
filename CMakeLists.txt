@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(Strategy)
 
-add_executable(Strategy Strategy.cpp)
+add_executable(Strategy Strategy.cpp, Strategy.hpp)
 
 option(BUILD_TESTS "Build tests" ON)
 
