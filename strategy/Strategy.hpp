@@ -1,3 +1,7 @@
+#ifndef STRATEGY_HPP
+#define STRATEGY_HPP
+
+
 /*
  * C++ Design Patterns: Strategy
  * Author: Jakub Vojvoda [github.com/JakubVojvoda]
@@ -85,4 +89,6 @@ public:
 private:
   Strategy *strategy;
   // ...
-}
+};
+
+#endif
