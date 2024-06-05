@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../Strategy.hpp"
+#include "Strategy.hpp"
 
 int main()
 {
