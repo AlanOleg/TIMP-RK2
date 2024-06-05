@@ -1,42 +1,89 @@
+/*
+ * C++ Design Patterns: Strategy
+ * Author: Jakub Vojvoda [github.com/JakubVojvoda]
+ * 2016
+ *
+ * Source code is licensed under MIT License
+ * (for more details see LICENSE)
+ *
+ */
+
 #include <iostream>
-#include <cassert>
-#include <sstream>
-#include <gtest/gtest.h>
+#include <iostream>
 
-// Ваши классы Strategy, ConcreteStrategyA, ConcreteStrategyB, ConcreteStrategyC и Context здесь...
+/*
+ * Strategy
+ * declares an interface common to all supported algorithms
+ */
+class Strategy
+{
+public:
+  virtual ~Strategy() { /* ... */ }
+  virtual void algorithmInterface() = 0;
+  // ...
+};
 
-void testStrategyA() {
-  std::ostringstream stream;
-  std::streambuf* oldCoutStreamBuf = std::cout.rdbuf();
-  std::cout.rdbuf(stream.rdbuf());
+/*
+ * Concrete Strategies
+ * implement the algorithm using the Strategy interface
+ */
+class ConcreteStrategyA : public Strategy
+{
+public:
+  ~ConcreteStrategyA() { /* ... */ }
+  
+  void algorithmInterface()
+  {
+    std::cout << "Concrete Strategy A" << std::endl;
+  }
+  // ...
+};
 
-  Context context(new ConcreteStrategyA());
-  context.contextInterface();
+class ConcreteStrategyB : public Strategy
+{
+public:
+  ~ConcreteStrategyB() { /* ... */ }
+  
+  void algorithmInterface()
+  {
+    std::cout << "Concrete Strategy B" << std::endl;
+  }
+  // ...
+};
 
-  std::cout.rdbuf(oldCoutStreamBuf);
-  assert(stream.str() == "Concrete Strategy A\n");
-}
+class ConcreteStrategyC : public Strategy
+{
+public:
+  ~ConcreteStrategyC() { /* ... */ }
+  
+  void algorithmInterface()
+  {
+    std::cout << "Concrete Strategy C" << std::endl;
+  }
+  // ...
+};
 
-void testStrategyB() {
-  std::ostringstream stream;
-  std::streambuf* oldCoutStreamBuf = std::cout.rdbuf();
-  std::cout.rdbuf(stream.rdbuf());
+/*
+ * Context
+ * maintains a reference to a Strategy object
+ */
+class Context
+{
+public:
+  Context( Strategy* const s ) : strategy( s ) {}
+  
+  ~Context()
+  {
+    delete strategy;
+  }
+  
+  void contextInterface()
+  {
+    strategy->algorithmInterface();
+  }
+  // ...
 
-  Context context(new ConcreteStrategyB());
-  context.contextInterface();
-
-  std::cout.rdbuf(oldCoutStreamBuf);
-  assert(stream.str() == "Concrete Strategy B\n");
-}
-
-void testStrategyC() {
-  std::ostringstream stream;
-  std::streambuf* oldCoutStreamBuf = std::cout.rdbuf();
-  std::cout.rdbuf(stream.rdbuf());
-
-  Context context(new ConcreteStrategyC());
-  context.contextInterface();
-
-  std::cout.rdbuf(oldCoutStreamBuf);
-  assert(stream.str() == "Concrete Strategy C\n");
+private:
+  Strategy *strategy;
+  // ...
 }
