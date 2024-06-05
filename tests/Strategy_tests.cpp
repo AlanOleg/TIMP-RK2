@@ -42,7 +42,7 @@ void testStrategyC() {
   assert(stream.str() == "Concrete Strategy C\n");
 }
 
-int testing_ground() {
+int main() {
   testStrategyA();
   testStrategyB();
   testStrategyC();
