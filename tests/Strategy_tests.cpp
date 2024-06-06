@@ -1,16 +1,16 @@
 #include <iostream>
 #include <cassert>
 #include <sstream>
+#include <memory>
 #include <gtest/gtest.h>
 #include "../strategy/Strategy.hpp"
 
-void testStrategy1() { // Тест на исключения
-  try {
-    Context *context = new Context(nullptr);
-    context->contextInterface();
-  } catch (const std::exception &e) {
-    std::cout << "Исключение поймано: " << e.what() << std::endl;
+void testStrategy1() { // Тест на утечку памяти
+  {
+    std::unique_ptr<Context> contextA(new Context(new ConcreteStrategyA()));
+    contextA->contextInterface();
   }
+  // После выхода из блока память должна быть автоматически очищена.
 }
 
 void testStrategy2() { // Тест с несколькими контекстами
