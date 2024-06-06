@@ -15,7 +15,6 @@ void testStrategy1() { // Тест изменения стратегии во в
   context->contextInterface();
 
   delete context;
-  return 0;
 }
 
 void testStrategy2() { // Тест с несколькими контекстами
@@ -30,9 +29,6 @@ void testStrategy2() { // Тест с несколькими контекста�
   delete contextA;
   delete contextB;
   delete contextC;
-
-  return 0;
-  delete contextD; // Проверка освобождения памяти при уничтожении объекта Context
 }
 
 void testStrategy3() { // Тест с проверкой вывода
@@ -45,7 +41,6 @@ void testStrategy3() { // Тест с проверкой вывода
   assert(stream.str() == "Concrete Strategy A\n");
 
   std::cout.rdbuf(oldCoutStreamBuf);
-  return 0;
 }
 
 int main() {
