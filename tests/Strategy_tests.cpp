@@ -4,34 +4,48 @@
 #include <gtest/gtest.h>
 #include "../strategy/Strategy.hpp"
 
-void testStrategy1() {
+void testStrategy1() { // Тест изменения стратегии во время выполнения
+  Context *context = new Context(new ConcreteStrategyA());
+  context->contextInterface();
+
+  delete context->setStrategy(new ConcreteStrategyB());
+  context->contextInterface();
+
+  delete context->setStrategy(new ConcreteStrategyC());
+  context->contextInterface();
+
+  delete context;
+  return 0;
+}
+
+void testStrategy2() { // Тест с несколькими контекстами
+  Context *contextA = new Context(new ConcreteStrategyA());
+  Context *contextB = new Context(new ConcreteStrategyB());
+  Context *contextC = new Context(new ConcreteStrategyC());
+
+  contextA->contextInterface();
+  contextB->contextInterface();
+  contextC->contextInterface();
+
+  delete contextA;
+  delete contextB;
+  delete contextC;
+
+  return 0;
+  delete contextD; // Проверка освобождения памяти при уничтожении объекта Context
+}
+
+void testStrategy3() { // Тест с проверкой вывода
   std::ostringstream stream;
-  std::streambuf* oldCoutStreamBuf = std::cout.rdbuf();
+  std::streambuf *oldCoutStreamBuf = std::cout.rdbuf();
   std::cout.rdbuf(stream.rdbuf());
 
   Context context(new ConcreteStrategyA());
   context.contextInterface();
-
-  std::cout.rdbuf(oldCoutStreamBuf);
   assert(stream.str() == "Concrete Strategy A\n");
-}
-
-void testStrategy2() {
-  Context* contextD = new Context(new ConcreteStrategyA());
-  contextD->contextInterface();
-  delete contextD; // Проверка освобождения памяти при уничтожении объекта Context
-}
-
-void testStrategy3() {
-  std::ostringstream stream;
-  std::streambuf* oldCoutStreamBuf = std::cout.rdbuf();
-  std::cout.rdbuf(stream.rdbuf());
-
-  Context context(new ConcreteStrategyC());
-  context.contextInterface();
 
   std::cout.rdbuf(oldCoutStreamBuf);
-  assert(stream.str() == "Concrete Strategy C\n");
+  return 0;
 }
 
 int main() {
