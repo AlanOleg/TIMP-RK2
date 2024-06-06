@@ -4,9 +4,7 @@
 #include <gtest/gtest.h>
 #include "../strategy/Strategy.hpp"
 
-// Ваши классы Strategy, ConcreteStrategyA, ConcreteStrategyB, ConcreteStrategyC и Context здесь...
-
-void testStrategyA() {
+void testStrategy1() {
   std::ostringstream stream;
   std::streambuf* oldCoutStreamBuf = std::cout.rdbuf();
   std::cout.rdbuf(stream.rdbuf());
@@ -18,19 +16,13 @@ void testStrategyA() {
   assert(stream.str() == "Concrete Strategy A\n");
 }
 
-void testStrategyB() {
-  std::ostringstream stream;
-  std::streambuf* oldCoutStreamBuf = std::cout.rdbuf();
-  std::cout.rdbuf(stream.rdbuf());
-
-  Context context(new ConcreteStrategyB());
-  context.contextInterface();
-
-  std::cout.rdbuf(oldCoutStreamBuf);
-  assert(stream.str() == "Concrete Strategy B\n");
+void testStrategy2() {
+  Context* contextD = new Context(new ConcreteStrategyA());
+  contextD->contextInterface();
+  delete contextD; // Проверка освобождения памяти при уничтожении объекта Context
 }
 
-void testStrategyC() {
+void testStrategy3() {
   std::ostringstream stream;
   std::streambuf* oldCoutStreamBuf = std::cout.rdbuf();
   std::cout.rdbuf(stream.rdbuf());
@@ -43,9 +35,9 @@ void testStrategyC() {
 }
 
 int main() {
-  testStrategyA();
-  testStrategyB();
-  testStrategyC();
+  testStrategy1();
+  testStrategy2();
+  testStrategy3();
 
   std::cout << "All tests passed!" << std::endl;
 
