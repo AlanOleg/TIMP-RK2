@@ -4,15 +4,20 @@
 #include <gtest/gtest.h>
 #include "../strategy/Strategy.hpp"
 
+void Context::setStrategy(Strategy* const s) {
+  delete this->strategy;
+  this->strategy = s;
+}
+
 void testStrategy1() { // Тест изменения стратегии во время выполнения
   Context *context = new Context(new ConcreteStrategyA());
-  context->contextInterface();
+  context->contextInterface(); // Ожидается вывод: "Concrete Strategy A"
 
-  delete context->setStrategy(new ConcreteStrategyB());
-  context->contextInterface();
+  context->setStrategy(new ConcreteStrategyB());
+  context->contextInterface(); // Ожидается вывод: "Concrete Strategy B"
 
-  delete context->setStrategy(new ConcreteStrategyC());
-  context->contextInterface();
+  context->setStrategy(new ConcreteStrategyC());
+  context->contextInterface(); // Ожидается вывод: "Concrete Strategy C"
 
   delete context;
 }
